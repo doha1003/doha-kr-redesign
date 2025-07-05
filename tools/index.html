@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실용도구 | doha.kr</title>
+    <meta name="description" content="일상생활에 유용한 다양한 도구들을 무료로 이용하세요! 글자수 세기, 연봉 계산기, BMI 계산기 등 실용적인 도구를 제공합니다.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="실용도구 | doha.kr">
+    <meta property="og:description" content="일상생활에 유용한 다양한 도구들을 무료로 이용하세요!">
+    <meta property="og:image" content="https://doha.kr/images/og-image.png">
+    <meta property="og:url" content="https://doha.kr/tools/">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/placeholder-favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/images/logo.svg">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7905640648499222" crossorigin="anonymous"></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "실용도구 - doha.kr",
+        "url": "https://doha.kr/tools/",
+        "description": "일상생활에 유용한 다양한 도구들을 무료로 이용하세요! 글자수 세기, 연봉 계산기, BMI 계산기 등 실용적인 도구를 제공합니다.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "KRW"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "2150"
+        },
+        "applicationSubCategory": [
+            "글자수 세기",
+            "연봉 계산기",
+            "BMI 계산기",
+            "환율 계산기",
+            "비밀번호 생성기",
+            "QR코드 생성기"
+        ]
+    }
+    </script>
+    
+    <style>
+        /* Page-specific styles */
+        /* CSS 변수 정의 */
+        /* 네비게이션 바 */
+        /* 헤더 섹션 */
+        .header {
+            background: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .header-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        .header-subtitle {
+            font-size: 20px;
+            color: #6b7280;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+        /* 컨테이너 */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        /* 도구 그리드 */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        .tool-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+        }
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+            transform-origin: left;
+        }
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .tool-card:hover::before {
+            transform: scaleX(1);
+        }
+        .tool-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+            display: block;
+        }
+        .tool-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #111827;
+        }
+        .tool-description {
+            line-height: 1.6;
+            margin-bottom: 24px;
+            color: #6b7280;
+        }
+        .tool-features {
+            margin-bottom: 24px;
+        }
+        .tool-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        .tool-button {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tool-button:hover {
+            transform: translateY(-2px);
+        }
+        /* 광고 컨테이너 */
+        .ad-container {
+            max-width: 1280px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .ad-label {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        /* 푸터 */
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 36px;
+            }
+            .header-subtitle {
+                font-size: 18px;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            .tool-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 네비게이션 바 -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="logo">doha.kr</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link">홈</a></li>
+                <li><a href="/tests/" class="nav-link">심리테스트</a></li>
+                <li><a href="/tools/" class="nav-link">실용도구</a></li>
+                <li><a href="/contact/" class="nav-link">문의</a></li>
+                <li><a href="/about/" class="nav-link">소개</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- 헤더 섹션 -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">실용도구</h1>
+            <p class="header-subtitle">
+                일상생활에 유용한 다양한 도구들을 무료로 이용하세요!
+            </p>
+        </div>
+    </header>
+    
+    <!-- 메인 컨텐츠 -->
+    <div class="container">
+        <div class="tools-grid">
+            <!-- 글자수 세기 -->
+            <a href="/tools/text-counter.html" class="tool-card">
+                <span class="tool-icon">📝</span>
+                <h2 class="tool-title">글자수 세기</h2>
+                <p class="tool-description">
+                    자소서, 리포트 작성 시 필수! 글자수와 단어수를 실시간으로 확인할 수 있는 도구입니다.
+                </p>
+                <div class="tool-features">
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>실시간 글자수 카운팅</span>
+                    </div>
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>공백 포함/제외 선택</span>
+                    </div>
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>단어수 및 문단수 표시</span>
+                    </div>
+                </div>
+                <span class="tool-button">도구 사용하기</span>
+            </a>
+            
+            <!-- 연봉 계산기 -->
+            <div class="tool-card" style="opacity: 0.7;">
+                <span class="tool-icon">💰</span>
+                <h2 class="tool-title">연봉 실수령액 계산기</h2>
+                <p class="tool-description">
+                    세금 공제 후 실제 받는 금액을 계산해보세요. 국민연금, 건강보험료 등을 자동으로 계산합니다.
+                </p>
+                <div class="tool-features">
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>정확한 세금 계산</span>
+                    </div>
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>월별 실수령액 분석</span>
+                    </div>
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>4대보험료 상세 내역</span>
+                    </div>
+                </div>
+                <span class="tool-button" style="background: var(--gray-400);">준비중</span>
+            </div>
+            
+            <!-- BMI 계산기 -->
+            <a href="/tools/bmi-calculator.html" class="tool-card">
+                <span class="tool-icon">🏃</span>
+                <h2 class="tool-title">BMI 계산기</h2>
+                <p class="tool-description">
+                    키와 몸무게로 체질량지수를 확인하고, 건강한 체중 범위를 알아보세요.
+                </p>
+                <div class="tool-features">
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>정확한 BMI 계산</span>
+                    </div>
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>건강 상태 분석</span>
+                    </div>
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>적정 체중 제안</span>
+                    </div>
+                </div>
+                <span class="tool-button">도구 사용하기</span>
+            </a>
+            
+            <!-- 환율 계산기 -->
+            <div class="tool-card" style="opacity: 0.7;">
+                <span class="tool-icon">💱</span>
+                <h2 class="tool-title">환율 계산기</h2>
+                <p class="tool-description">
+                    실시간 환율 정보로 다양한 통화 간 환전 금액을 계산할 수 있습니다.
+                </p>
+                <div class="tool-features">
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>실시간 환율 정보</span>
+                    </div>
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>주요 통화 지원</span>
+                    </div>
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>환율 변동 그래프</span>
+                    </div>
+                </div>
+                <span class="tool-button" style="background: var(--gray-400);">준비중</span>
+            </div>
+            
+            <!-- 비밀번호 생성기 -->
+            <div class="tool-card" style="opacity: 0.7;">
+                <span class="tool-icon">🔐</span>
+                <h2 class="tool-title">비밀번호 생성기</h2>
+                <p class="tool-description">
+                    안전하고 강력한 비밀번호를 자동으로 생성해주는 도구입니다.
+                </p>
+                <div class="tool-features">
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>안전한 랜덤 생성</span>
+                    </div>
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>길이 및 조건 설정</span>
+                    </div>
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>보안 강도 표시</span>
+                    </div>
+                </div>
+                <span class="tool-button" style="background: var(--gray-400);">준비중</span>
+            </div>
+            
+            <!-- QR코드 생성기 -->
+            <div class="tool-card" style="opacity: 0.7;">
+                <span class="tool-icon">📱</span>
+                <h2 class="tool-title">QR코드 생성기</h2>
+                <p class="tool-description">
+                    텍스트나 링크를 QR코드로 변환하여 쉽게 공유할 수 있습니다.
+                </p>
+                <div class="tool-features">
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>다양한 형식 지원</span>
+                    </div>
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>고해상도 다운로드</span>
+                    </div>
+                    <div class="tool-feature">
+                        <span>✅</span>
+                        <span>커스텀 디자인</span>
+                    </div>
+                </div>
+                <span class="tool-button" style="background: var(--gray-400);">준비중</span>
+            </div>
+        </div>
+        
+        <!-- 광고 영역 -->
+        <div class="ad-container">
+            <div class="ad-label">광고</div>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7905640648499222"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+    </div>
+    
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>doha.kr</h3>
+                <p style="color: var(--gray-400); margin-top: 8px;">
+                    일상을 더 재미있게 만드는 공간<br>
+                    심리테스트와 실용도구의 만남
+                </p>
+                <div class="footer-social">
+                    <a href="mailto:youtubdoha@gmail.com" class="social-link">📧</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>서비스</h3>
+                <ul class="footer-links">
+                    <li><a href="/">홈</a></li>
+                    <li><a href="/tests/">심리테스트</a></li>
+                    <li><a href="/tools/">실용도구</a></li>
+                    <li><a href="/about/">사이트 소개</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>인기 콘텐츠</h3>
+                <ul class="footer-links">
+                    <li><a href="/tests/teto-egen/start.html">테토-에겐 테스트</a></li>
+                    <li><a href="/tests/mbti/">MBTI 테스트</a></li>
+                    <li><a href="/tools/text-counter.html">글자수 세기</a></li>
+                    <li><a href="/tools/bmi-calculator.html">BMI 계산기</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>고객지원</h3>
+                <ul class="footer-links">
+                    <li><a href="/contact/">문의하기</a></li>
+                    <li><a href="/faq/">자주 묻는 질문</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="/privacy/">개인정보처리방침</a>
+                <a href="/terms/">이용약관</a>
+            </div>
+            <p>&copy; 2025 doha.kr. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- External JavaScript -->
+    <script src="/js/main.js"></script>
+    
+    <!-- AdSense initialization -->
+    <script>
+        // 애드센스 광고 로드
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>
