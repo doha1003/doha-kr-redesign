@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테토-에겐 테스트 시작하기 | doha.kr</title>
+    <meta name="description" content="당신은 테토형인가요, 에겐형인가요? 10개의 간단한 질문으로 알아보는 성격 유형 테스트를 시작하세요!">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="테토-에겐 테스트 - 나는 어떤 유형일까?">
+    <meta property="og:description" content="10개의 간단한 질문으로 알아보는 테토형 vs 에겐형 성격 테스트">
+    <meta property="og:image" content="https://doha.kr/images/teto-egen-og.png">
+    <meta property="og:url" content="https://doha.kr/tests/teto-egen/start.html">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/placeholder-favicon.svg" type="image/svg+xml">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7905640648499222" crossorigin="anonymous"></script>
+    
+    <style>
+        /* 페이지 전용 스타일 */
+        .test-intro-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .test-intro-header {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+        
+        .test-intro-header h1 {
+            font-size: 2.8em;
+            margin-bottom: 16px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .test-intro-header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
+            color: white;
+            margin-bottom: 0;
+        }
+        
+        .test-intro-content {
+            padding: 50px 40px;
+        }
+        
+        .intro-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .intro-title {
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--gray-800);
+        }
+        
+        .intro-description {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: var(--gray-600);
+            margin-bottom: 40px;
+        }
+        
+        .test-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--gray-50);
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            border-color: var(--primary-300);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 16px;
+        }
+        
+        .feature-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--gray-800);
+        }
+        
+        .feature-desc {
+            font-size: 1em;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+        
+        .start-button {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.4em;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .start-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+            color: white;
+        }
+        
+        .start-button:active {
+            transform: translateY(0);
+        }
+        
+        .test-info {
+            background: var(--primary-50);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border-left: 4px solid var(--primary-500);
+        }
+        
+        .test-info h3 {
+            color: var(--primary-700);
+            margin-bottom: 16px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .test-info ul {
+            color: var(--primary-600);
+            line-height: 1.6;
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .test-info li {
+            margin-bottom: 8px;
+        }
+        
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .test-intro-container {
+                margin: 20px;
+                border-radius: 12px;
+            }
+            
+            .test-intro-header {
+                padding: 40px 20px;
+            }
+            
+            .test-intro-header h1 {
+                font-size: 2.2em;
+            }
+            
+            .test-intro-content {
+                padding: 40px 25px;
+            }
+            
+            .intro-title {
+                font-size: 1.6em;
+            }
+            
+            .intro-description {
+                font-size: 1.1em;
+            }
+            
+            .start-button {
+                padding: 16px 40px;
+                font-size: 1.2em;
+            }
+            
+            .test-features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <div id="navbar-placeholder"></div>
+    
+    <div class="test-intro-container">
+        <div class="test-intro-header">
+            <h1>🦋 테토-에겐 테스트 🐱</h1>
+            <p>당신의 성격 유형을 알아보세요!</p>
+        </div>
+        
+        <div class="test-intro-content">
+            <div class="intro-section">
+                <h2 class="intro-title">당신은 테토형? 에겐형?</h2>
+                <p class="intro-description">
+                    10개의 간단한 질문으로 당신의 성격 유형을 분석해드립니다.<br>
+                    활발하고 외향적인 테토형인지, 차분하고 신중한 에겐형인지 알아보세요!
+                </p>
+            </div>
+            
+            <div class="test-features">
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">빠른 테스트</h3>
+                    <p class="feature-desc">단 10개의 질문으로 2분 만에 완료</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">정확한 분석</h3>
+                    <p class="feature-desc">심리학 기반의 과학적인 성격 분석</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🆓</div>
+                    <h3 class="feature-title">완전 무료</h3>
+                    <p class="feature-desc">회원가입 없이 무료로 이용 가능</p>
+                </div>
+            </div>
+            
+            <div class="test-info">
+                <h3>📋 테스트 안내</h3>
+                <ul>
+                    <li>총 10개의 선택형 질문입니다</li>
+                    <li>각 질문에 솔직하게 답변해주세요</li>
+                    <li>테스트 시간은 약 2-3분 소요됩니다</li>
+                    <li>결과는 즉시 확인할 수 있습니다</li>
+                    <li>카카오톡으로 친구들과 결과를 공유해보세요!</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center;">
+                <button class="start-button" onclick="startTest()">
+                    🚀 테스트 시작하기
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 푸터 -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- External JavaScript -->
+    <script src="/js/main.js"></script>
+    
+    <script>
+        // 테스트 시작 함수
+        function startTest() {
+            window.location.href = '/tests/teto-egen/test.html';
+        }
+        
+        // 전역 함수로 설정
+        window.startTest = startTest;
+    </script>
+    
+    <!-- AdSense initialization -->
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>
