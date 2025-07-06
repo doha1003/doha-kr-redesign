@@ -24,6 +24,36 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7905640648499222" crossorigin="anonymous"></script>
     
     <style>
+        /* CSS 변수 재정의 (폴백) */
+        :root {
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            
+            --font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            background-color: var(--gray-50);
+            color: var(--gray-900);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
         /* 테스트 전용 스타일 */
         .test-container {
             max-width: 800px;
@@ -46,6 +76,7 @@
             margin-bottom: 8px;
             font-weight: 600;
             color: white;
+            margin-top: 0;
         }
         
         .test-header p {
@@ -53,6 +84,7 @@
             opacity: 0.9;
             font-weight: 300;
             color: white;
+            margin: 0;
         }
         
         .test-content {
@@ -86,6 +118,7 @@
             transition: all 0.2s ease;
             font-size: 1.1em;
             font-weight: 500;
+            font-family: var(--font-family);
         }
         
         .gender-btn:hover {
@@ -203,6 +236,7 @@
             transition: all 0.2s ease;
             text-decoration: none;
             display: inline-block;
+            font-family: var(--font-family);
         }
         
         .btn-primary {
@@ -309,6 +343,7 @@
             cursor: pointer;
             transition: all 0.2s ease;
             font-size: 0.9em;
+            font-family: var(--font-family);
         }
         
         .kakao-share {
