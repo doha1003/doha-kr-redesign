@@ -22,445 +22,72 @@
     
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7905640648499222" crossorigin="anonymous"></script>
-    
-    <style>
-        /* CSS 변수 재정의 (폴백) */
-        :root {
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-400: #9ca3af;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
-            
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
-            
-            --font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        
-        body {
-            font-family: var(--font-family);
-            background-color: var(--gray-50);
-            color: var(--gray-900);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* 테스트 전용 스타일 */
-        .test-container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .test-header {
-            background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
-        
-        .test-header h1 {
-            font-size: 2.5em;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: white;
-            margin-top: 0;
-        }
-        
-        .test-header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-            font-weight: 300;
-            color: white;
-            margin: 0;
-        }
-        
-        .test-content {
-            padding: 40px 30px;
-        }
-        
-        .gender-selection {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .gender-title {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            color: var(--gray-800);
-        }
-        
-        .gender-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .gender-btn {
-            padding: 16px 32px;
-            border: 2px solid var(--gray-300);
-            border-radius: 12px;
-            background: white;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 1.1em;
-            font-weight: 500;
-            font-family: var(--font-family);
-        }
-        
-        .gender-btn:hover {
-            border-color: #ff6b9d;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .gender-btn.selected {
-            background: #ff6b9d;
-            color: white;
-            border-color: #ff6b9d;
-        }
-        
-        .progress-container {
-            margin-bottom: 30px;
-        }
-        
-        .progress-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-        
-        .progress-text {
-            font-size: 0.9em;
-            font-weight: 500;
-            color: var(--gray-700);
-        }
-        
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background: var(--gray-200);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .progress {
-            height: 100%;
-            background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
-            transition: width 0.4s ease;
-            border-radius: 4px;
-        }
-        
-        .question-container {
-            margin-bottom: 30px;
-        }
-        
-        .question {
-            font-size: 1.3em;
-            margin-bottom: 25px;
-            font-weight: 600;
-            line-height: 1.4;
-            color: var(--gray-800);
-        }
-        
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        
-        .option {
-            background: var(--gray-50);
-            border: 2px solid var(--gray-200);
-            border-radius: 8px;
-            padding: 18px 20px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 1em;
-            line-height: 1.4;
-            position: relative;
-            color: var(--gray-700);
-        }
-        
-        .option:hover {
-            transform: translateY(-1px);
-            border-color: #ff6b9d;
-            background: var(--gray-100);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .option.selected {
-            background: #fdf2f8;
-            border-color: #ff6b9d;
-            color: #be185d;
-        }
-        
-        .option.selected::after {
-            content: '✓';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #ff6b9d;
-        }
-        
-        .navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-        
-        .btn {
-            padding: 12px 28px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            display: inline-block;
-            font-family: var(--font-family);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
-            color: white;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .btn-primary:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        .btn-secondary {
-            background: var(--gray-100);
-            color: var(--gray-700);
-            border: 1px solid var(--gray-300);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--gray-200);
-            transform: translateY(-1px);
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        /* 결과 화면 스타일 */
-        .result-container {
-            text-align: center;
-            padding: 40px 30px;
-        }
-        
-        .result-card {
-            background: white;
-            border-radius: 16px;
-            padding: 40px;
-            margin: 30px auto;
-            max-width: 600px;
-            box-shadow: var(--shadow-xl);
-            text-align: center;
-        }
-        
-        .result-character {
-            font-size: 6em;
-            margin-bottom: 20px;
-            line-height: 1;
-        }
-        
-        .result-type {
-            font-size: 2.5em;
-            font-weight: 900;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .result-description {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: var(--gray-700);
-            margin-bottom: 30px;
-        }
-        
-        .result-traits {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            margin: 25px 0;
-        }
-        
-        .result-trait {
-            background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 500;
-        }
-        
-        .share-buttons {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        
-        .share-btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 0.9em;
-            font-family: var(--font-family);
-        }
-        
-        .kakao-share {
-            background: #fee500;
-            color: #3c1e1e;
-        }
-        
-        .kakao-share:hover {
-            background: #fdd835;
-            transform: translateY(-1px);
-        }
-        
-        .restart-btn {
-            margin-top: 30px;
-            padding: 14px 36px;
-            font-size: 1.1em;
-        }
-        
-        /* 반응형 디자인 */
-        @media (max-width: 768px) {
-            .test-container {
-                margin: 20px;
-                border-radius: 12px;
-            }
-            
-            .test-header, .test-content {
-                padding: 30px 20px;
-            }
-            
-            .test-header h1 {
-                font-size: 2em;
-            }
-            
-            .question {
-                font-size: 1.1em;
-            }
-            
-            .option {
-                padding: 14px 16px;
-            }
-            
-            .gender-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .gender-btn {
-                min-width: 200px;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- 네비게이션 -->
     <div id="navbar-placeholder"></div>
     
-    <div class="test-container">
-        <div class="test-header">
+    <div class="teto-test-container">
+        <div class="teto-test-header">
             <h1>🦋 테토-에겐 테스트 🐱</h1>
             <p>12개 문항으로 알아보는 나의 성격 유형</p>
         </div>
         
-        <div class="test-content">
+        <div class="teto-test-content">
             <!-- 성별 선택 화면 -->
-            <div id="gender-screen">
-                <div class="gender-selection">
-                    <h2 class="gender-title">성별을 선택해주세요</h2>
-                    <div class="gender-buttons">
-                        <button class="gender-btn" onclick="selectGender('male')">👨 남성</button>
-                        <button class="gender-btn" onclick="selectGender('female')">👩 여성</button>
+            <div id="gender-screen" class="teto-gender-screen">
+                <div class="teto-gender-selection">
+                    <h2 class="teto-gender-title">성별을 선택해주세요</h2>
+                    <div class="teto-gender-buttons">
+                        <button class="teto-gender-btn" onclick="selectGender('male')">👨 남성</button>
+                        <button class="teto-gender-btn" onclick="selectGender('female')">👩 여성</button>
                     </div>
                 </div>
             </div>
             
             <!-- 테스트 진행 화면 -->
-            <div id="test-screen" class="hidden">
-                <div class="progress-container">
-                    <div class="progress-info">
-                        <span class="progress-text" id="progress-text">질문 0 / 12</span>
-                        <span class="progress-text" id="progress-percent">0%</span>
+            <div id="test-screen" class="teto-test-screen hidden">
+                <div class="teto-progress-container">
+                    <div class="teto-progress-info">
+                        <span class="teto-progress-text" id="progress-text">질문 0 / 12</span>
+                        <span class="teto-progress-text" id="progress-percent">0%</span>
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress" id="progress"></div>
+                    <div class="teto-progress-bar">
+                        <div class="teto-progress" id="progress"></div>
                     </div>
                 </div>
                 
-                <div class="question-container">
-                    <div class="question" id="question"></div>
-                    <div class="options" id="options"></div>
+                <div class="teto-question-container">
+                    <div class="teto-question" id="question"></div>
+                    <div class="teto-options" id="options"></div>
                 </div>
                 
-                <div class="navigation">
+                <div class="teto-navigation">
                     <button class="btn btn-secondary" id="prev-btn" onclick="previousQuestion()" style="display: none;">이전</button>
                     <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" disabled>다음</button>
                 </div>
             </div>
             
             <!-- 결과 화면 -->
-            <div id="result-screen" class="result-container hidden">
-                <div class="result-card">
-                    <div class="result-character" id="result-character">🦋</div>
-                    <div class="result-type" id="result-type">테토형</div>
-                    <div class="result-description" id="result-description">
+            <div id="result-screen" class="teto-result-container hidden">
+                <div class="teto-result-card">
+                    <div class="teto-result-character" id="result-character">🦋</div>
+                    <div class="teto-result-type" id="result-type">테토형</div>
+                    <div class="teto-result-description" id="result-description">
                         활발하고 즉흥적인 성격의 소유자
                     </div>
                     
-                    <div class="result-traits" id="result-traits">
+                    <div class="teto-result-traits" id="result-traits">
                         <!-- 동적으로 생성 -->
                     </div>
                     
-                    <div class="share-buttons">
-                        <button class="share-btn kakao-share" onclick="shareKakao()">
+                    <div class="teto-share-buttons">
+                        <button class="teto-share-btn teto-kakao-share" onclick="shareKakao()">
                             📱 카카오톡 공유
                         </button>
                     </div>
                     
-                    <button class="btn btn-primary restart-btn" onclick="restartTest()">
+                    <button class="btn btn-primary teto-restart-btn" onclick="restartTest()">
                         다시 테스트하기
                     </button>
                 </div>
