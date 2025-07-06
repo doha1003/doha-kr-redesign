@@ -721,6 +721,272 @@ a[href*="준비중"]:hover {
 }
 
 /* ============================================
+   TETO-EGEN 테스트 스타일
+   ============================================ */
+
+/* 테토-에겐 히어로 섹션 */
+.teto-hero {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.teto-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+}
+
+.teto-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.teto-hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.teto-hero-title {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.teto-hero-subtitle {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.teto-start-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    color: #ff6b9d;
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.teto-start-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(255, 255, 255, 0.4);
+}
+
+/* 테토-에겐 캐릭터 섹션 */
+.teto-characters {
+    padding: 100px 20px;
+    background: white;
+}
+
+.teto-character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.teto-character-card {
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid #fbcfe8;
+}
+
+.teto-character-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 107, 157, 0.2);
+    border-color: #ff6b9d;
+}
+
+.teto-character-emoji {
+    font-size: 80px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.teto-character-name {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #be185d;
+}
+
+.teto-character-traits {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.teto-trait {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.teto-character-desc {
+    color: #be185d;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* 테토-에겐 특징 섹션 */
+.teto-features {
+    padding: 100px 20px;
+    background: var(--gray-50);
+}
+
+.teto-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+
+.teto-feature-item {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-200);
+}
+
+.teto-feature-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+}
+
+.teto-feature-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.teto-feature-item h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--gray-800);
+}
+
+.teto-feature-item p {
+    color: var(--gray-600);
+    line-height: 1.5;
+}
+
+/* 테토-에겐 CTA 섹션 */
+.teto-cta {
+    text-align: center;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
+    padding: 60px 40px;
+    border-radius: 20px;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.teto-cta h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.teto-cta p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+}
+
+.teto-cta-btn {
+    background: white;
+    color: #ff6b9d;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.teto-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* 테토-에겐 반응형 디자인 */
+@media (max-width: 768px) {
+    .teto-hero-title {
+        font-size: 36px;
+    }
+    
+    .teto-hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .teto-character-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .teto-character-card {
+        padding: 32px 24px;
+    }
+    
+    .teto-character-emoji {
+        font-size: 64px;
+    }
+    
+    .teto-features-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .teto-cta {
+        padding: 40px 24px;
+        border-radius: 16px;
+    }
+    
+    .teto-cta h3 {
+        font-size: 24px;
+    }
+}
+
+/* ============================================
    BMI 계산기 스타일
    ============================================ */
 
