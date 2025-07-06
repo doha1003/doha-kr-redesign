@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>테토-에겐 테스트 시작하기 | doha.kr</title>
-    <meta name="description" content="당신은 테토형인가요, 에겐형인가요? 10개의 간단한 질문으로 알아보는 성격 유형 테스트를 시작하세요!">
+    <title>테토-에겐 테스트 - 나는 테토형? 에겐형? | doha.kr</title>
+    <meta name="description" content="당신의 성격이 테토형인지 에겐형인지 알아보는 재미있는 성격 테스트. 12개 문항으로 간단하게 확인해보세요!">
+    <meta name="keywords" content="테토에겐, 테토에겐테스트, 성격테스트, 심리테스트, 테토형, 에겐형">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="테토-에겐 테스트 - 나는 어떤 유형일까?">
-    <meta property="og:description" content="10개의 간단한 질문으로 알아보는 테토형 vs 에겐형 성격 테스트">
+    <meta property="og:title" content="테토-에겐 테스트 - 나는 어떤 유형?">
+    <meta property="og:description" content="당신은 테토형인가요? 에겐형인가요? 재미있는 성격 테스트로 알아보세요!">
     <meta property="og:image" content="https://doha.kr/images/teto-egen-og.png">
-    <meta property="og:url" content="https://doha.kr/tests/teto-egen/start.html">
+    <meta property="og:url" content="https://doha.kr/tests/teto-egen/">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,105 +41,98 @@
                 🦋 테토-에겐 테스트 🐱
             </h1>
             <p class="teto-hero-subtitle">
-                당신은 활발한 테토형? 차분한 에겐형?<br>
-                10개 질문으로 알아보는 나의 성격 유형
+                당신의 성격은 테토형인가요? 에겐형인가요?<br>
+                12개의 간단한 질문으로 알아보는 재미있는 성격 분석!
             </p>
-            <button onclick="startTest()" class="teto-start-button">
-                🚀 지금 바로 테스트하기
-            </button>
+            <a href="test.html" class="teto-start-btn">
+                <span>🎯</span> 테스트 시작하기
+            </a>
         </div>
     </section>
     
-    <!-- 메인 컨테이너 -->
-    <div class="teto-main-container">
-        
-        <!-- 테스트 소개 -->
-        <div class="teto-intro">
-            <h2 class="teto-intro-title">나는 어떤 타입일까? 🤔</h2>
-            <p class="teto-intro-description">
-                간단한 질문들로 당신의 성격을 재미있게 분석해보세요!<br>
-                친구들과 결과를 비교해보는 재미도 쏠쏠해요.
-            </p>
-        </div>
-        
-        <!-- 캐릭터 소개 -->
-        <div class="teto-characters">
-            <div class="teto-character teto">
-                <span class="teto-character-emoji">🦋</span>
-                <h3 class="teto-character-name">테토형</h3>
-                <p class="teto-character-desc">
-                    활발하고 외향적<br>
-                    에너지 넘치는 성격<br>
-                    새로운 도전을 즐김
-                </p>
-            </div>
+    <!-- 캐릭터 소개 -->
+    <section class="teto-characters">
+        <div class="container">
+            <h2 class="section-title">어떤 유형인지 미리 만나보세요!</h2>
             
-            <div class="teto-character egen">
-                <span class="teto-character-emoji">🐱</span>
-                <h3 class="teto-character-name">에겐형</h3>
-                <p class="teto-character-desc">
-                    차분하고 신중함<br>
-                    깊이 있는 사고<br>
-                    안정감을 추구
-                </p>
+            <div class="teto-character-grid">
+                <div class="teto-character-card">
+                    <div class="teto-character-emoji">🦋</div>
+                    <h3 class="teto-character-name">테토형</h3>
+                    <div class="teto-character-traits">
+                        <span class="teto-trait">활발함</span>
+                        <span class="teto-trait">즉흥적</span>
+                        <span class="teto-trait">사교적</span>
+                    </div>
+                    <p class="teto-character-desc">
+                        에너지가 넘치고 활발한 성격! 새로운 것을 좋아하고 
+                        즉흥적인 결정을 잘 하며, 사람들과 어울리는 것을 즐깁니다.
+                    </p>
+                </div>
+                
+                <div class="teto-character-card">
+                    <div class="teto-character-emoji">🐱</div>
+                    <h3 class="teto-character-name">에겐형</h3>
+                    <div class="teto-character-traits">
+                        <span class="teto-trait">신중함</span>
+                        <span class="teto-trait">계획적</span>
+                        <span class="teto-trait">사려깊음</span>
+                    </div>
+                    <p class="teto-character-desc">
+                        차분하고 신중한 성격! 계획을 세우는 것을 좋아하고 
+                        깊이 생각한 후 결정하며, 안정적인 관계를 선호합니다.
+                    </p>
+                </div>
             </div>
         </div>
-        
-        <!-- 테스트 특징 -->
-        <div class="teto-features">
-            <h3 class="teto-features-title">
-                📋 테스트 정보
-            </h3>
+    </section>
+    
+    <!-- 테스트 특징 -->
+    <section class="teto-features">
+        <div class="container">
+            <h2 class="section-title">테토-에겐 테스트 특징</h2>
+            
             <div class="teto-features-grid">
                 <div class="teto-feature-item">
-                    <span class="teto-feature-icon">⚡</span>
-                    <h4 class="teto-feature-title">빠른 완료</h4>
-                    <p class="teto-feature-desc">약 2-3분 소요</p>
+                    <div class="teto-feature-icon">⚡</div>
+                    <h3>빠른 진단</h3>
+                    <p>12개 문항으로 3분 만에 완료</p>
                 </div>
+                
                 <div class="teto-feature-item">
-                    <span class="teto-feature-icon">🎯</span>
-                    <h4 class="teto-feature-title">정확한 분석</h4>
-                    <p class="teto-feature-desc">10개 핵심 질문</p>
+                    <div class="teto-feature-icon">🎯</div>
+                    <h3>정확한 분석</h3>
+                    <p>성격 특성을 세밀하게 분석</p>
                 </div>
+                
                 <div class="teto-feature-item">
-                    <span class="teto-feature-icon">📱</span>
-                    <h4 class="teto-feature-title">쉬운 공유</h4>
-                    <p class="teto-feature-desc">카카오톡 공유</p>
+                    <div class="teto-feature-icon">📱</div>
+                    <h3>간편한 공유</h3>
+                    <p>결과를 친구들과 쉽게 공유</p>
                 </div>
+                
                 <div class="teto-feature-item">
-                    <span class="teto-feature-icon">🆓</span>
-                    <h4 class="teto-feature-title">완전 무료</h4>
-                    <p class="teto-feature-desc">가입 불필요</p>
+                    <div class="teto-feature-icon">🆓</div>
+                    <h3>완전 무료</h3>
+                    <p>회원가입 없이 무료 이용</p>
                 </div>
             </div>
+            
+            <div class="teto-cta">
+                <h3>지금 바로 시작해보세요!</h3>
+                <p>당신은 테토형일까요? 에겐형일까요?</p>
+                <a href="test.html" class="teto-cta-btn">
+                    테스트 시작하기 →
+                </a>
+            </div>
         </div>
-        
-        <!-- CTA 버튼 -->
-        <div class="teto-cta">
-            <button onclick="startTest()" class="teto-cta-button">
-                ✨ 내 성격 알아보기 ✨
-            </button>
-            <p class="teto-cta-note">
-                💫 이미 <strong>50만+</strong>명이 참여한 인기 테스트!
-            </p>
-        </div>
-    </div>
+    </section>
     
     <!-- 푸터 -->
     <div id="footer-placeholder"></div>
     
     <!-- External JavaScript -->
     <script src="/js/main.js"></script>
-    
-    <script>
-        // 테스트 시작 함수
-        function startTest() {
-            window.location.href = '/tests/teto-egen/test.html';
-        }
-        
-        // 전역 함수로 설정
-        window.startTest = startTest;
-    </script>
     
     <!-- AdSense initialization -->
     <script>
