@@ -25,248 +25,106 @@
     
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7905640648499222" crossorigin="anonymous"></script>
-    
-    <style>
-        /* 페이지 전용 스타일 */
-        .test-intro-container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .test-intro-header {
-            background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
-            color: white;
-            padding: 50px 30px;
-            text-align: center;
-        }
-        
-        .test-intro-header h1 {
-            font-size: 2.8em;
-            margin-bottom: 16px;
-            font-weight: 700;
-            color: white;
-        }
-        
-        .test-intro-header p {
-            font-size: 1.3em;
-            opacity: 0.9;
-            font-weight: 300;
-            color: white;
-            margin-bottom: 0;
-        }
-        
-        .test-intro-content {
-            padding: 50px 40px;
-        }
-        
-        .intro-section {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .intro-title {
-            font-size: 2em;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--gray-800);
-        }
-        
-        .intro-description {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: var(--gray-600);
-            margin-bottom: 40px;
-        }
-        
-        .test-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-        
-        .feature-item {
-            text-align: center;
-            padding: 30px 20px;
-            background: var(--gray-50);
-            border-radius: 12px;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        
-        .feature-item:hover {
-            border-color: var(--primary-300);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .feature-icon {
-            font-size: 3em;
-            margin-bottom: 16px;
-        }
-        
-        .feature-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--gray-800);
-        }
-        
-        .feature-desc {
-            font-size: 1em;
-            color: var(--gray-600);
-            line-height: 1.5;
-        }
-        
-        .start-button {
-            background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
-            color: white;
-            border: none;
-            padding: 20px 50px;
-            font-size: 1.4em;
-            font-weight: 600;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .start-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-            color: white;
-        }
-        
-        .start-button:active {
-            transform: translateY(0);
-        }
-        
-        .test-info {
-            background: var(--primary-50);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 40px 0;
-            border-left: 4px solid var(--primary-500);
-        }
-        
-        .test-info h3 {
-            color: var(--primary-700);
-            margin-bottom: 16px;
-            font-size: 1.3em;
-            font-weight: 600;
-        }
-        
-        .test-info ul {
-            color: var(--primary-600);
-            line-height: 1.6;
-            margin: 0;
-            padding-left: 20px;
-        }
-        
-        .test-info li {
-            margin-bottom: 8px;
-        }
-        
-        /* 반응형 디자인 */
-        @media (max-width: 768px) {
-            .test-intro-container {
-                margin: 20px;
-                border-radius: 12px;
-            }
-            
-            .test-intro-header {
-                padding: 40px 20px;
-            }
-            
-            .test-intro-header h1 {
-                font-size: 2.2em;
-            }
-            
-            .test-intro-content {
-                padding: 40px 25px;
-            }
-            
-            .intro-title {
-                font-size: 1.6em;
-            }
-            
-            .intro-description {
-                font-size: 1.1em;
-            }
-            
-            .start-button {
-                padding: 16px 40px;
-                font-size: 1.2em;
-            }
-            
-            .test-features {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- 네비게이션 -->
     <div id="navbar-placeholder"></div>
     
-    <div class="test-intro-container">
-        <div class="test-intro-header">
-            <h1>🦋 테토-에겐 테스트 🐱</h1>
-            <p>당신의 성격 유형을 알아보세요!</p>
+    <!-- 히어로 섹션 -->
+    <section style="background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%); color: white; padding: 80px 20px; text-align: center; position: relative; overflow: hidden;">
+        <!-- 배경 장식 -->
+        <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; z-index: 1;"></div>
+        <div style="position: absolute; bottom: -150px; right: -150px; width: 400px; height: 400px; background: rgba(255,255,255,0.1); border-radius: 50%; z-index: 1;"></div>
+        
+        <div style="max-width: 800px; margin: 0 auto; position: relative; z-index: 2;">
+            <div style="font-size: 1.2em; background: rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 20px; display: inline-block; margin-bottom: 20px; backdrop-filter: blur(10px);">
+                ✨ 인기 성격 테스트 ✨
+            </div>
+            <h1 style="font-size: 3.5em; font-weight: 700; margin: 20px 0; line-height: 1.2; color: white;">
+                🦋 테토-에겐 테스트 🐱
+            </h1>
+            <p style="font-size: 1.4em; opacity: 0.9; margin-bottom: 40px; line-height: 1.5; color: white;">
+                당신은 활발한 테토형? 차분한 에겐형?<br>
+                10개 질문으로 알아보는 나의 성격 유형
+            </p>
+            <button onclick="startTest()" style="background: white; color: #ff6b9d; border: none; padding: 18px 40px; font-size: 1.3em; font-weight: 600; border-radius: 50px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: all 0.3s ease; transform: translateY(0);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.2)'">
+                🚀 지금 바로 테스트하기
+            </button>
+        </div>
+    </section>
+    
+    <!-- 메인 컨테이너 -->
+    <div style="max-width: 1000px; margin: -40px auto 60px; background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); position: relative; z-index: 3; padding: 60px 40px;">
+        
+        <!-- 테스트 소개 -->
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-size: 2.2em; font-weight: 600; margin-bottom: 20px; color: #1f2937;">나는 어떤 타입일까? 🤔</h2>
+            <p style="font-size: 1.2em; line-height: 1.6; color: #6b7280; margin-bottom: 0;">
+                간단한 질문들로 당신의 성격을 재미있게 분석해보세요!<br>
+                친구들과 결과를 비교해보는 재미도 쏠쏠해요.
+            </p>
         </div>
         
-        <div class="test-intro-content">
-            <div class="intro-section">
-                <h2 class="intro-title">당신은 테토형? 에겐형?</h2>
-                <p class="intro-description">
-                    10개의 간단한 질문으로 당신의 성격 유형을 분석해드립니다.<br>
-                    활발하고 외향적인 테토형인지, 차분하고 신중한 에겐형인지 알아보세요!
+        <!-- 캐릭터 소개 -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 60px 0;">
+            <div style="text-align: center; padding: 40px 30px; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 20px; border: 3px solid #f59e0b;">
+                <div style="font-size: 4em; margin-bottom: 20px;">🦋</div>
+                <h3 style="font-size: 1.6em; font-weight: 600; margin-bottom: 15px; color: #92400e;">테토형</h3>
+                <p style="color: #b45309; line-height: 1.5; font-size: 1.1em;">
+                    활발하고 외향적<br>
+                    에너지 넘치는 성격<br>
+                    새로운 도전을 즐김
                 </p>
             </div>
             
-            <div class="test-features">
-                <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">빠른 테스트</h3>
-                    <p class="feature-desc">단 10개의 질문으로 2분 만에 완료</p>
+            <div style="text-align: center; padding: 40px 30px; background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-radius: 20px; border: 3px solid #0284c7;">
+                <div style="font-size: 4em; margin-bottom: 20px;">🐱</div>
+                <h3 style="font-size: 1.6em; font-weight: 600; margin-bottom: 15px; color: #0c4a6e;">에겐형</h3>
+                <p style="color: #075985; line-height: 1.5; font-size: 1.1em;">
+                    차분하고 신중함<br>
+                    깊이 있는 사고<br>
+                    안정감을 추구
+                </p>
+            </div>
+        </div>
+        
+        <!-- 테스트 특징 -->
+        <div style="background: #f9fafb; padding: 40px; border-radius: 16px; margin: 40px 0;">
+            <h3 style="text-align: center; font-size: 1.6em; font-weight: 600; margin-bottom: 30px; color: #374151;">
+                📋 테스트 정보
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">⚡</div>
+                    <h4 style="font-weight: 600; margin-bottom: 8px; color: #1f2937;">빠른 완료</h4>
+                    <p style="color: #6b7280; font-size: 0.95em;">약 2-3분 소요</p>
                 </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">정확한 분석</h3>
-                    <p class="feature-desc">심리학 기반의 과학적인 성격 분석</p>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🎯</div>
+                    <h4 style="font-weight: 600; margin-bottom: 8px; color: #1f2937;">정확한 분석</h4>
+                    <p style="color: #6b7280; font-size: 0.95em;">10개 핵심 질문</p>
                 </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">🆓</div>
-                    <h3 class="feature-title">완전 무료</h3>
-                    <p class="feature-desc">회원가입 없이 무료로 이용 가능</p>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">📱</div>
+                    <h4 style="font-weight: 600; margin-bottom: 8px; color: #1f2937;">쉬운 공유</h4>
+                    <p style="color: #6b7280; font-size: 0.95em;">카카오톡 공유</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🆓</div>
+                    <h4 style="font-weight: 600; margin-bottom: 8px; color: #1f2937;">완전 무료</h4>
+                    <p style="color: #6b7280; font-size: 0.95em;">가입 불필요</p>
                 </div>
             </div>
-            
-            <div class="test-info">
-                <h3>📋 테스트 안내</h3>
-                <ul>
-                    <li>총 10개의 선택형 질문입니다</li>
-                    <li>각 질문에 솔직하게 답변해주세요</li>
-                    <li>테스트 시간은 약 2-3분 소요됩니다</li>
-                    <li>결과는 즉시 확인할 수 있습니다</li>
-                    <li>카카오톡으로 친구들과 결과를 공유해보세요!</li>
-                </ul>
-            </div>
-            
-            <div style="text-align: center;">
-                <button class="start-button" onclick="startTest()">
-                    🚀 테스트 시작하기
-                </button>
-            </div>
+        </div>
+        
+        <!-- CTA 버튼 -->
+        <div style="text-align: center; margin-top: 50px;">
+            <button onclick="startTest()" style="background: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%); color: white; border: none; padding: 20px 50px; font-size: 1.4em; font-weight: 600; border-radius: 50px; cursor: pointer; box-shadow: 0 15px 35px rgba(255, 107, 157, 0.4); transition: all 0.3s ease; transform: translateY(0);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 20px 40px rgba(255, 107, 157, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(255, 107, 157, 0.4)'">
+                ✨ 내 성격 알아보기 ✨
+            </button>
+            <p style="margin-top: 20px; color: #9ca3af; font-size: 0.9em;">
+                💫 이미 <strong>50만+</strong>명이 참여한 인기 테스트!
+            </p>
         </div>
     </div>
     
@@ -285,6 +143,45 @@
         // 전역 함수로 설정
         window.startTest = startTest;
     </script>
+    
+    <style>
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            section h1 {
+                font-size: 2.5em !important;
+            }
+            
+            section p {
+                font-size: 1.2em !important;
+            }
+            
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px !important;
+            }
+            
+            div[style*="max-width: 1000px"] {
+                margin: -20px 20px 40px !important;
+                padding: 40px 25px !important;
+            }
+            
+            button {
+                padding: 16px 35px !important;
+                font-size: 1.2em !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            div[style*="grid-template-columns: repeat(2, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
     
     <!-- AdSense initialization -->
     <script>
